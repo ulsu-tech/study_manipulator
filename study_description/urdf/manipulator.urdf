@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="study_manipulator">
+  <link
+    name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.690196078431373 0.690196078431373 0.690196078431373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/link1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/link1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 1"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-6"
+      upper="6"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/link2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/link2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0. 0 5"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-6"
+      upper="6"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="grip">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/grip.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://study_description/meshes/grip.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.5 0. -0."
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="grip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-6"
+      upper="6"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ee">
+          <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />        
+        <geometry>
+          <box size="0.02 0.02 0.02"/>
+        </geometry>
+        <material        name="">
+          <color         rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+        </material>
+      </visual>
+  </link>
+  <joint
+    name="ee"
+    type="fixed">
+    <origin
+      xyz="0.2  0 0"
+      rpy="0 0 0" />
+    <parent
+      link="grip" />
+    <child
+      link="ee" />
+    <axis
+      xyz="0 0 0" />
+  </joint>  
+</robot>
