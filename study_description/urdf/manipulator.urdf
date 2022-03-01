@@ -60,7 +60,7 @@
     name="joint1"
     type="revolute">
     <origin
-      xyz="0 0 1"
+      xyz="0 0 0.1"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -104,8 +104,8 @@
     name="joint2"
     type="revolute">
     <origin
-      xyz="0. 0 5"
-      rpy="0 0 0" />
+      xyz="0. 0 0.5"
+      rpy="1.5707963267948966 0 0" />
     <parent
       link="link1" />
     <child
@@ -148,7 +148,7 @@
     name="joint3"
     type="revolute">
     <origin
-      xyz="0.5 0. -0."
+      xyz="0 0.5 -0."
       rpy="0 0 0" />
     <parent
       link="link2" />
@@ -178,7 +178,7 @@
     name="ee"
     type="fixed">
     <origin
-      xyz="0.2  0 0"
+      xyz="0 0.2 0"
       rpy="0 0 0" />
     <parent
       link="grip" />
