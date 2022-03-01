@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: study_description
+    relative_path: urdf/manipulator.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/study_manipulator.srdf
+  CONFIG:
+    author_name: IFG
+    author_email: gunja@ulsu.tech
+    generated_timestamp: 1646178454
